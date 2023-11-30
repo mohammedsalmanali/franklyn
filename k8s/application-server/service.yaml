@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: franklyn-application-server
+
+spec:
+  type: LoadBalancer
+  externalTrafficPolicy: Local
+  ports:
+    - port: 8080
+      targetPort: 8080
+      protocol: TCP
+  selector:
+    app: franklyn-application-server

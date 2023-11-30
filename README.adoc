@@ -1,0 +1,106 @@
+= Franklyn-Quarkus
+
+== Zeitplan
+
+
+image::docs/asciidocs/images/todoGantt-alpha.png[]
+image::docs/asciidocs/images/todoGantt-beta.png[]
+image::docs/asciidocs/images/todoGantt-final.png[]
+
+
+////
+
+
+[plantuml, bar1, svg]
+----
+include::docs/asciidocs/plantuml/todoGantt-alpha.puml[]
+----
+
+[plantuml, bar2, svg]
+----
+include::docs/asciidocs/plantuml/todoGantt-beta.puml[]
+----
+
+[plantuml, bar3, svg]
+----
+include::docs/asciidocs/plantuml/todoGantt-final.puml[]
+----
+////
+
+
+
+== Neuimplementierung von Franklyn mit Quarkus
+
+Franklyn ist eine Applikation, welche Schülern eine der Berufswelt entsprechende Arbeitsumgebung während Leistungsfeststellungen bietet.
+
+Lehrkräfte bekommen die Möglichkeit, Testsitzungen zu erstellen. Schüler können sich zu einer Sitzung mit einem PIN oder per Vor- und Nachnamen anmelden. 
+Der Schülerclient nimmt dabei in einem regelmäßigen Intervall Screenshots auf, welche sich die Lehrkraft ansehen kann. 
+
+== Wie starte ich den Franklyn (Dev)
+
+Aktuell leider nur auf Linux und Mac möglich!
+
+=== Instructor Client
+
+[source,shell]
+----
+git clone https://github.com/htl-leonding-project/franklyn-quarkus <1>
+cd franklyn-quarkus <2>
+cd franklyn-frontend <2>
+npm i --force
+ng serve --open <3>
+----
+
+<1> Klone das Franklyn-3 Repo
+<2> wechsel in das `Frontend`-Verzeichnis
+<3> Starten der Seite
+
+.Probleme aufgetreten?
+[%collapsible]
+====
+Falls es probleme gibt, kann es sein das Angular nicht installiert ist. In diesem Fall installieren Sie einfach Angular.
+
+[source,bash]
+----
+npm install @angular/cli
+----
+====
+
+=== Examinee Client
+
+Laden Sie sich das Letzte .jar File aus unseren link:https://github.com/htl-leonding-project/franklyn-quarkus/releases[Releases] herunter
+
+.Ausführen des .jar Files
+[source,shell]
+----
+java -jar franklyn3-client-prealpha.jar
+----
+
+=== Überprüfen
+
+Gehen Sie auf http://localhost:4200/impementation-test um das laufende Programm zu sehen.
+
+Um die gespeicherten Alpha- und Beta-Frames zu sehen suchen Sie in ihren `franklyn-quarkus/franklyn-client`-Verzeichnis die Ordner `jpgImages` und `pngImages`
+
+
+== Technologien
+* Quarkus
+* Angular
+* PostgreSQl
+
+== Team
+* Angerer Mona
+* Al Sabagh Abdulrahman
+* Klose Peter
+* Thaller David
+
+== Links
+
+link:https://student.cloud.htl-leonding.ac.at/t.melcher/franklyn/start[Franklyn 3]
+
+link:https://htl-leonding-project.github.io/franklyn-quarkus/[Dokumentation]
+
+
+link:https://vm81.htl-leonding.ac.at/agiles/99-313/current[YouTrack]
+
+Ein Projekt der link:https://www.htl-leonding.at/[HTL Leonding]
